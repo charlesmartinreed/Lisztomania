@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     //MARK:- @IBOutlets
     @IBOutlet weak var volumeSlider: UISlider!
@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //setting the navigation head
+        title = "Lisztomania!"
 
         //try finding the audio file
         if let audioPath = Bundle.main.path(forResource: "hungarian", ofType: "mp3") {
@@ -30,6 +33,9 @@ class ViewController: UIViewController {
                 print("could not play back file")
             }
         }
+        
+        //set the maximum value of the slider to be the same as the length of the song, as a Float value
+        scrubbingSlider.maximumValue = Float(audioPlayer.duration)
     }
     
     @IBAction func playButtonTapped(_ sender: Any) {
@@ -54,6 +60,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func scrubbedChanged(_ sender: UISlider) {
+        audioPlayer.currentTime = Double(scrubbingSlider.value)
     }
     
     

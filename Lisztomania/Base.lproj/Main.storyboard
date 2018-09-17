@@ -46,7 +46,7 @@
                                     <action selector="volumeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="78p-DK-rby"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-yH-fXE">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="600" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-yH-fXE">
                                 <rect key="frame" x="87" y="386" width="200" height="31"/>
                                 <connections>
                                     <action selector="scrubbedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iXS-Vl-yIx"/>
