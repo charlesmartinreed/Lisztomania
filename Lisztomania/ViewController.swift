@@ -14,6 +14,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     //MARK:- @IBOutlets
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var scrubbingSlider: UISlider!
+    var playbackTimer = Timer()
     
     var audioPlayer = AVAudioPlayer()
     
@@ -36,10 +37,29 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         //set the maximum value of the slider to be the same as the length of the song, as a Float value
         scrubbingSlider.maximumValue = Float(audioPlayer.duration)
+        
+        
+        
     }
     
     @IBAction func playButtonTapped(_ sender: Any) {
         audioPlayer.play()
+        
+        //start the timer for updating the scrubbing slider as the song plays
+        playbackTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats: true)
+        
+        //set the view to animate the audio progression as a track plays???
+        //can't use this right now, just freezes the app in the sim
+//        while audioPlayer.isPlaying {
+//            //print(Float(audioPlayer.currentTime))
+//            DispatchQueue.main.async {
+//                self.scrubbingSlider.setValue(Float(self.audioPlayer.currentTime), animated: false)
+//            }
+//        }
+    }
+    
+    @objc func updateScrubber() {
+        scrubbingSlider.setValue(Float(audioPlayer.currentTime), animated: true)
     }
     
 
@@ -49,6 +69,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func stopButtonTapped(_ sender: Any) {
         audioPlayer.stop()
+        playbackTimer.invalidate()
         
         //with this line, stopping the song will cause it to return to the beginning at next play.
         audioPlayer.currentTime = 0
@@ -60,7 +81,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func scrubbedChanged(_ sender: UISlider) {
-        audioPlayer.currentTime = Double(scrubbingSlider.value)
+        audioPlayer.currentTime = TimeInterval(scrubbingSlider.value)
     }
     
     
