@@ -1,24 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVq-JL-tNv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lisztomania" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mgw-wf-icC">
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="pause" id="pzg-D4-cIv">
+                                        <connections>
+                                            <action selector="pauseButtonTapped:" destination="BYZ-38-t0r" id="aPI-wU-rPw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FSF-Xb-7OH"/>
+                                    <barButtonItem title="Stop" id="7jY-sa-tpi">
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" id="JxH-H2-MBx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liszt.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SgH-cn-LbK">
+                                <rect key="frame" x="117.5" y="52" width="140" height="196"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SgH-cn-LbK" secondAttribute="height" multiplier="5:7" id="5lw-ue-qMm"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="8KC-VD-gw5">
+                                <rect key="frame" x="87" y="321" width="200" height="31"/>
+                                <connections>
+                                    <action selector="volumeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="78p-DK-rby"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-yH-fXE">
+                                <rect key="frame" x="87" y="386" width="200" height="31"/>
+                                <connections>
+                                    <action selector="scrubbedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="iXS-Vl-yIx"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xO2-yH-fXE" firstAttribute="top" secondItem="8KC-VD-gw5" secondAttribute="bottom" constant="35" id="XCv-6s-bw1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8KC-VD-gw5" secondAttribute="trailing" constant="90" id="Yzw-iT-x38"/>
+                            <constraint firstItem="xO2-yH-fXE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="ZCs-vr-GZF"/>
+                            <constraint firstItem="8KC-VD-gw5" firstAttribute="top" secondItem="SgH-cn-LbK" secondAttribute="bottom" constant="73" id="ceE-mb-7a5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xO2-yH-fXE" secondAttribute="trailing" constant="90" id="emU-kA-eLA"/>
+                            <constraint firstItem="8KC-VD-gw5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="hax-zA-T1b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SgH-cn-LbK" secondAttribute="trailing" constant="117.5" id="m32-I7-59z"/>
+                            <constraint firstItem="SgH-cn-LbK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="x1c-Zd-hMn"/>
+                            <constraint firstItem="SgH-cn-LbK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117.5" id="yeK-XS-7X1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="qeA-XK-VE3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="eFM-mL-reM">
+                            <connections>
+                                <action selector="playButtonTapped:" destination="BYZ-38-t0r" id="mt0-R0-O3l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scrubbingSlider" destination="xO2-yH-fXE" id="aqd-3u-zt0"/>
+                        <outlet property="volumeSlider" destination="8KC-VD-gw5" id="r8M-gf-XB7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="-7.6461769115442282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oHR-SS-irh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVq-JL-tNv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1ln-Dp-3Dw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4Hc-DZ-fOm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFL-l1-fQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="liszt.jpg" width="140" height="196"/>
+    </resources>
 </document>

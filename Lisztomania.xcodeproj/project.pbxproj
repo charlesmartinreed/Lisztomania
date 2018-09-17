@@ -14,6 +14,8 @@
 		8C27A0132150137A0076EB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C27A0112150137A0076EB40 /* LaunchScreen.storyboard */; };
 		8C27A01E2150137A0076EB40 /* LisztomaniaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C27A01D2150137A0076EB40 /* LisztomaniaTests.swift */; };
 		8C27A0292150137B0076EB40 /* LisztomaniaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C27A0282150137B0076EB40 /* LisztomaniaUITests.swift */; };
+		8C27A038215014530076EB40 /* hungarian.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C27A036215014520076EB40 /* hungarian.mp3 */; };
+		8C27A039215014530076EB40 /* liszt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C27A037215014530076EB40 /* liszt.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8C27A0242150137B0076EB40 /* LisztomaniaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LisztomaniaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C27A0282150137B0076EB40 /* LisztomaniaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisztomaniaUITests.swift; sourceTree = "<group>"; };
 		8C27A02A2150137B0076EB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C27A036215014520076EB40 /* hungarian.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hungarian.mp3; sourceTree = "<group>"; };
+		8C27A037215014530076EB40 /* liszt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = liszt.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				8C27A00C215013790076EB40 /* Main.storyboard */,
 				8C27A00F2150137A0076EB40 /* Assets.xcassets */,
 				8C27A0112150137A0076EB40 /* LaunchScreen.storyboard */,
+				8C27A036215014520076EB40 /* hungarian.mp3 */,
+				8C27A037215014530076EB40 /* liszt.jpg */,
 				8C27A0142150137A0076EB40 /* Info.plist */,
 			);
 			path = Lisztomania;
@@ -229,6 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C27A039215014530076EB40 /* liszt.jpg in Resources */,
+				8C27A038215014530076EB40 /* hungarian.mp3 in Resources */,
 				8C27A0132150137A0076EB40 /* LaunchScreen.storyboard in Resources */,
 				8C27A0102150137A0076EB40 /* Assets.xcassets in Resources */,
 				8C27A00E215013790076EB40 /* Main.storyboard in Resources */,
